@@ -11,7 +11,6 @@ addgroup --system --gid 92 frr
 addgroup --system --gid 85 frrvty
 adduser --system --ingroup frr --home /var/run/frr/ --gecos "FRR suite" --shell /bin/false frr
 usermod -a -G frrvty frr
-cd /tmp
 git clone https://github.com/frrouting/frr.git frr
 cd frr
 # wget https://github.com/FRRouting/frr/archive/frr-2.0.tar.gz
@@ -20,8 +19,8 @@ cd frr
 # cd /tmp/frr
 ./bootstrap.sh
 ./configure \
-    --prefix=/usr/local \
-    --exec-prefix=/usr \
+    --prefix=/usr/local/frr \
+    --exec-prefix=/usr/local \
     --enable-vtysh \
     --enable-watchfrr \
     --enable-user=frr \
