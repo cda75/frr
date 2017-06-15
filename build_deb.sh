@@ -19,7 +19,10 @@ cd /tmp/frr
 ./bootstrap.sh
 ./configure \
     --prefix=/usr/local/frr \
-    --exec-prefix=/usr/local \
+    --sbindir=/usr/local/sbin \
+    --bindir=/usr/local/bin \
+    --localstatedir=/usr/local/frr/var \
+    --sysconfdir=/usr/local/frr/etc \
     --enable-vtysh \
     --enable-user=frr \
     --enable-group=frr \
