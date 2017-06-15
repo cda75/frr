@@ -17,10 +17,8 @@ usermod -a -G frrvty frr
 # cd /tmp/frr
 ./bootstrap.sh
 ./configure \
-    --prefix=/usr/local/frr \
-    --sbindir=/usr/local/sbin \
-    --bindir=/usr/local/bin \
-    --localstatedir=/usr/local/frr/var \
+    --prefix=/usr/local \
+    --exec-prefix=/usr \
     --enable-vtysh \
     --enable-watchfrr \
     --enable-user=frr \
@@ -39,14 +37,14 @@ usermod -a -G frrvty frr
 make
 make check
 make install
-mkdir -p /usr/local/frr/var
-cd /usr/local/frr/etc
-cat > zebra.conf <<EOL
-hostname FRRouter
-password zebra
-log stdout
-EOL
-cp zebra.conf ospfd.conf
-cp zebra.conf bgpd.conf
-cp zebra.conf vtysh.conf
-chown -R frr:frr /usr/local/frr
+# mkdir -p /usr/local/frr/var
+# cd /usr/local/frr/etc
+#cat > zebra.conf <<EOL
+#hostname FRRouter
+#password zebra
+#log stdout
+#EOL
+#cp zebra.conf ospfd.conf
+#cp zebra.conf bgpd.conf
+#cp zebra.conf vtysh.conf
+#chown -R frr:frr /usr/local/frr
