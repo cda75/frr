@@ -11,16 +11,16 @@ addgroup --system --gid 92 frr
 addgroup --system --gid 85 frrvty
 adduser --system --ingroup frr --home /var/run/frr/ --gecos "FRR suite" --shell /bin/false frr
 usermod -a -G frrvty frr
-wget https://github.com/FRRouting/frr/archive/frr-2.0.tar.gz
-mkdir -p /tmp/frr
-tar -xzf frr-2.0.tar.gz -C /tmp/frr --strip-components 1
-cd /tmp/frr
+# wget https://github.com/FRRouting/frr/archive/frr-2.0.tar.gz
+# mkdir -p /tmp/frr
+# tar -xzf frr-2.0.tar.gz -C /tmp/frr --strip-components 1
+# cd /tmp/frr
 ./bootstrap.sh
 ./configure \
     --prefix=/usr/local/frr \
-#    --sbindir=/usr/local/sbin \
-#    --bindir=/usr/local/bin \
-#    --localstatedir=/usr/local/frr/var \
+    --sbindir=/usr/local/sbin \
+    --bindir=/usr/local/bin \
+    --localstatedir=/usr/local/frr/var \
     --enable-user=frr \
     --enable-group=frr \
     --enable-vty-group=frrvty \
