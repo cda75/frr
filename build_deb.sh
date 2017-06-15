@@ -3,7 +3,7 @@
 # Installing FRR on Debian from scratch
 
 apt-get update
-apt-get install git autoconf automake libtool make gawk \
+apt-get install -y git autoconf automake libtool make gawk \
    libreadline-dev texinfo libjson-c-dev pkg-config bison flex \
    python-pip libc-ares-dev python3-dev
 pip install pytest 
