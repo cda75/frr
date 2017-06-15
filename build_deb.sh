@@ -37,7 +37,8 @@ cd frr
     --enable-shell-access \
     --enable-tcp-zebra \
     --enable-rtadv \
-    --with-pkg-git-version
+    --with-pkg-git-version \
+    --with-pkg-extra-version=-MyOwnFRRVersion 
 make
 make check
 make install
