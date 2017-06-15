@@ -11,18 +11,16 @@ addgroup --system --gid 92 frr
 addgroup --system --gid 85 frrvty
 adduser --system --ingroup frr --home /var/run/frr/ --gecos "FRR suite" --shell /bin/false frr
 usermod -a -G frrvty frr
-git clone https://github.com/frrouting/frr.git frr
-cd frr
-# wget https://github.com/FRRouting/frr/archive/frr-2.0.tar.gz
-# mkdir -p /tmp/frr
-# tar -xzf frr-2.0.tar.gz -C /tmp/frr --strip-components 1
-# cd /tmp/frr
+#git clone https://github.com/frrouting/frr.git frr
+wget https://github.com/FRRouting/frr/archive/frr-2.0.tar.gz
+mkdir -p /tmp/frr
+tar -xzf frr-2.0.tar.gz -C /tmp/frr --strip-components 1
+cd /tmp/frr
 ./bootstrap.sh
 ./configure \
     --prefix=/usr/local/frr \
     --exec-prefix=/usr/local \
     --enable-vtysh \
-    --enable-watchfrr \
     --enable-user=frr \
     --enable-group=frr \
     --enable-vty-group=frrvty \
@@ -35,9 +33,7 @@ cd frr
     --enable-multipath=8 \
     --enable-shell-access \
     --enable-tcp-zebra \
-    --enable-rtadv \
-    --with-pkg-git-version \
-    --with-pkg-extra-version=-MyOwnFRRVersion 
+    --enable-rtadv 
 make
 make check
 make install
