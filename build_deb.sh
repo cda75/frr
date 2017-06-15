@@ -21,6 +21,8 @@ usermod -a -G frrvty frr
     --sbindir=/usr/local/sbin \
     --bindir=/usr/local/bin \
     --localstatedir=/usr/local/frr/var \
+    --enable-vtysh \
+    --enable-watchfrr \
     --enable-user=frr \
     --enable-group=frr \
     --enable-vty-group=frrvty \
@@ -32,6 +34,7 @@ usermod -a -G frrvty frr
     --disable-ospf6d \
     --enable-multipath=8 \
     --enable-shell-access \
+    --enable-tcp-zebra \
     --enable-rtadv
 make
 make check
