@@ -14,7 +14,7 @@ usermod -a -G frrvty frr
 wget https://github.com/FRRouting/frr/archive/frr-2.0.tar.gz
 mkdir /tmp/frr
 tar -xzf frr-2.0.tar.gz -C /tmp/frr --strip-components 1
-cd/tmp/frr
+cd /tmp/frr
 ./bootstrap.sh
 ./configure \
     --prefix=/usr/local/frr \
