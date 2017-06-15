@@ -35,7 +35,6 @@ cd /tmp/frr
     --disable-ospf6d \
     --enable-multipath=8 \
     --enable-shell-access \
-    --enable-tcp-zebra \
     --enable-rtadv 
 make
 make check
